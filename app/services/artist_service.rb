@@ -11,6 +11,11 @@ class ArtistService
     JSON.parse(response.body, symbolize_names: :true)
   end
 
+  def artist(id)
+    response = @_conn.get("/api/v1/artists/#{id}.json")
+    JSON.parse(response.body, symbolize_names: :true)
+  end
+
   private
 
   def conn

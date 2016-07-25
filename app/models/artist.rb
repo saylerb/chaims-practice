@@ -11,4 +11,9 @@ class Artist < OpenStruct
       Artist.new(artist_data)
     end
   end
+
+  def self.find(id)
+    artist_data = service.artist(id)
+    Artist.new(artist_data)
+  end
 end
